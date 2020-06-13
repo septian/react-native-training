@@ -12,18 +12,20 @@ import {
   Text
 } from 'react-native';
 import styles from './asset/style';
-import Activity from './component/Activity';
-import ActivityList from './component/ActivityList';
+import FirstLast from './component/FirstLast';
+import ButtonCustom from './component/ButtonCustom';
 
 const App = () => {
-  const [activities, setActivities] = useState([]);
-  const dataActivities = data => {
-    setActivities(activities.concat(data));
+  const [username, setUsername] = useState('');
+  const getCallbacks = (value) => {
+    console.log(value);
+    setUsername(value);
   };
   return (
     <View style={styles.container} >
-      <Activity dataActivity={dataActivities} />
-      <ActivityList ActivitiesList={activities} />
+      <FirstLast callbacks={getCallbacks} />
+      <ButtonCustom />
+      <Text>username: {username}</Text>
     </View>
   );
 };

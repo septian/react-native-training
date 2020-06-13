@@ -11,13 +11,12 @@ import {
 } from 'react-native';
 
 const styles = StyleSheet.create({
-  container: {
-    margin: 5,
-    padding: 10,
-    backgroundColor: "#eaeaea",
+  button: {
+    borderRadius: 10,
     borderWidth: 1,
-    borderColor: "#000",
-    borderRadius: 10
+    padding: 10,
+    backgroundColor: 'red'
+
   }
 });
   

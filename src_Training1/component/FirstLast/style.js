@@ -11,13 +11,15 @@ import {
 } from 'react-native';
 
 const styles = StyleSheet.create({
-  container: {
-    margin: 5,
-    padding: 10,
-    backgroundColor: "#eaeaea",
+  title: {
+    fontSize: 15,
+    marginBottom: 10
+  },
+  input: {
     borderWidth: 1,
     borderColor: "#000",
-    borderRadius: 10
+    borderRadius: 10,
+    marginBottom: 10
   }
 });
   
