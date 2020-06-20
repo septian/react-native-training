@@ -11,20 +11,31 @@ import {
   View,
   Text
 } from 'react-native';
-import styles from './asset/style';
-import Activity from './component/Activity';
-import ActivityList from './component/ActivityList';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Home from './pages/Home';
+import Profile from './pages/Profile';
+import Login from './pages/Login';
+import { getData } from './component/LocalStorage';
 
+const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 const App = () => {
-  const [activities, setActivities] = useState([]);
-  const dataActivities = data => {
-    setActivities(activities.concat(data));
-  };
   return (
-    <View style={styles.container} >
-      <Activity dataActivity={dataActivities} />
-      <ActivityList ActivitiesList={activities} />
-    </View>
+    // <NavigationContainer>
+    //   <Tab.Navigator>
+    //     <Tab.Screen name="Home" component={Home} />
+    //     <Tab.Screen name="Profile" component={Profile} />
+    //   </Tab.Navigator>
+    // </NavigationContainer>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Profile" component={Profile} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
