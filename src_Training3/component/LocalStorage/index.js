@@ -2,11 +2,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 
 export const storeData = async (value) => {
     try {
-        let dataFormat = {
-            type: 'signin',
-            token: value,
-          };
-      await AsyncStorage.setItem('token', dataFormat);
+      await AsyncStorage.setItem('token', value);
       console.log("sukses");
     } catch (e) {
       // saving error
